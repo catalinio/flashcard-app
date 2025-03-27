@@ -11,7 +11,7 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const port = 3000;
+const port = 55555;
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on port ${port}`);
   console.log(`Access the app at http://localhost:${port}`);
