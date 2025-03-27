@@ -11,26 +11,58 @@ function Flashcard({ question, answer }) {
         width: '300px',
         height: '200px',
         margin: '20px',
-        padding: '20px',
-        cursor: 'pointer',
-        border: '1px solid #ccc',
-        borderRadius: '10px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-        transition: 'transform 0.6s',
-        transformStyle: 'preserve-3d',
-        transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0)'
+        perspective: '1000px',
+        cursor: 'pointer'
       }}
     >
       <div style={{
-        backfaceVisibility: 'hidden',
-        textAlign: 'center',
-        fontSize: '1.2em'
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        transformStyle: 'preserve-3d',
+        transition: 'transform 0.6s',
+        transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0)'
       }}>
-        {isFlipped ? answer : question}
+        {/* Front face */}
+        <div style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backfaceVisibility: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'white',
+          border: '1px solid #ccc',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+          padding: '20px',
+          fontSize: '1.2em',
+          textAlign: 'center'
+        }}>
+          {question}
+        </div>
+        
+        {/* Back face */}
+        <div style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backfaceVisibility: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'white',
+          border: '1px solid #ccc',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+          padding: '20px',
+          fontSize: '1.2em',
+          textAlign: 'center',
+          transform: 'rotateY(180deg)'
+        }}>
+          {answer}
+        </div>
       </div>
     </div>
   );

@@ -34,12 +34,13 @@ function App() {
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <h1 style={{ color: '#333', marginBottom: '30px' }}>Flashcards</h1>
       {flashcards.length > 0 && (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Flashcard 
+            key={currentCard}
             question={flashcards[currentCard].question}
             answer={flashcards[currentCard].answer}
           />
-          <div style={{ marginTop: '20px' }}>
+          <div style={{ marginTop: '40px' }}>
             <button 
               onClick={prevCard}
               style={{
