@@ -21,7 +21,8 @@ function Flashcard({ question, answer }) {
         height: '100%',
         transformStyle: 'preserve-3d',
         transition: 'transform 0.6s',
-        transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0)'
+        transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0)',
+        transformOrigin: '50% 50%'
       }}>
         {/* Front face */}
         <div style={{
@@ -38,7 +39,8 @@ function Flashcard({ question, answer }) {
           boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
           padding: '20px',
           fontSize: '1.2em',
-          textAlign: 'center'
+          textAlign: 'center',
+          transform: 'translateZ(1px)'
         }}>
           {question}
         </div>
@@ -59,7 +61,7 @@ function Flashcard({ question, answer }) {
           padding: '20px',
           fontSize: '1.2em',
           textAlign: 'center',
-          transform: 'rotateY(180deg)'
+          transform: 'rotateY(180deg) translateZ(1px)'
         }}>
           {answer}
         </div>
