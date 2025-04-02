@@ -48,7 +48,7 @@ npm start
 1. Access the application:
    - On the host computer: `http://localhost:55555`
    - On other devices in your network: `http://[your-host-ip]:55555`
-   - Also the https (secured) version can be accessed, but my own generated certificate is not trusted by browser
+   - Also the https (secured, on the 55556 port) `http://[your-host-ip]:55556` version can be accessed, but my own generated certificate is not trusted by browsers.
 
 2. To modify flashcards:
    - Edit the `public/flashcards.csv` file
