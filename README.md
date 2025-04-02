@@ -2,6 +2,16 @@
 
 A simple web-based flashcard application that loads questions and answers from a CSV file.
 
+### Example CSV file
+
+```title, Flashcard Title
+What is the capital of France?,Paris
+What is 2+2?,4
+Who wrote Romeo and Juliet?,William Shakespeare
+What is the largest planet in our solar system?,Jupiter
+What is the chemical symbol for gold?,Au 
+```
+
 ## Features
 
 - Load flashcards from a CSV file
